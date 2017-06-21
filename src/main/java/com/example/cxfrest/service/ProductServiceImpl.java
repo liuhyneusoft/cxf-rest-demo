@@ -8,8 +8,18 @@ import java.util.Map;
 
 /**
  * Created by liuhaiyang on 2017/5/27.
+ *
+ * 实际提供服务类，暴漏的接口有 ProductService定义
  */
 public class ProductServiceImpl implements ProductService {
+
+    public String testPost(){
+        return "post";
+    }
+    public String test(){
+        return "ddddd";
+    }
+
     @Override
     public List<Product> retrieveAllProducts() {
         System.err.println("retrieveAllProducts");

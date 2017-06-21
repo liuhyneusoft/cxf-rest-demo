@@ -10,10 +10,12 @@ import java.util.List;
 
 /**
  * Created by liuhaiyang on 2017/5/27.
+ *
+ * 启动服务端
  */
 public class ServerRest {
     public static void main(String[] args) {
-        // 添加 ResourceClass
+        // 添加 ResourceClass，添加服务提供类ProductServiceImpl，list可以添加多个
         List<Class<?>> resourceClassList = new ArrayList<Class<?>>();
         resourceClassList.add(ProductServiceImpl.class);
 
