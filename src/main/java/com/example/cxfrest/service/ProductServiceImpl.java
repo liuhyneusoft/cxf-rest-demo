@@ -1,6 +1,7 @@
 package com.example.cxfrest.service;
 
 import com.example.cxfrest.domain.Product;
+import com.google.gson.Gson;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response;
@@ -21,7 +22,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String insert(String vo) {
-        return vo;
+        Gson gson  = new Gson();
+        Product p = gson.fromJson(vo,Product.class);
+        return p.getName();
     }
 
 }
