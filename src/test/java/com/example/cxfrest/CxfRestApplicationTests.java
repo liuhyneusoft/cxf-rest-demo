@@ -113,5 +113,41 @@ public class CxfRestApplicationTests {
 		String wsResult = wsClient.form("", "http://localhost:8188/", "/get11", null, formParam);
 		System.out.println(wsResult);
 	}
+	
+	/**
+	* 		post
+	//client
+	    WSPostParamter postParams = WSClientHelper.newPostParam();
+            postParams.setBodyParam(StringTools.<User>toStringByJson(ver));
+
+            Map<String, String> headerParam = new HashMap<String, String>();
+            headerParam.put(WSClientHelper.WS_P_AUTHTOKEN, token);
+            postParams.setHeaderParam(headerParam);
+
+            WSClient wsClient = WSClientHelper.newInstance();
+            wsClient.post("http://x:xx/d", "/dd", postParams);
+			
+		//server
+		@RequestMapping(value = "/dd", method = RequestMethod.POST)
+		public void  dd(@RequestBody User er) {
+
+		}
+	*/
+	
+	/** 
+		form
+		//client
+	    Map<String, String> formParam = new HashMap<String, String>();
+            formParam.put("id", "123456");
+            WSClient wsClient = WSClientHelper.newInstance();
+            wsResult = wsClient.form(token, "http://x:xx/d", "/dd", null, formParam);
+		//server	
+		@RequestMapping(value = "/dd", method = RequestMethod.POST, produces = "application/json")
+		public @ResponseBody  String dd(@RequestParam(value = "id", required = false) String id) {
+				 
+			}
+	
+	
+	*/
 
 }
